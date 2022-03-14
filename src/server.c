@@ -24,7 +24,11 @@ char	*ft_straddc(char c, char *str)
 		len = ft_strlen(str) + 1;
 	stra = (char *)malloc(sizeof(char) * (len + 1));
 	if (!stra)
+	{
+		if (str)
+			free(str);
 		return (NULL);
+	}
 	i = 0;
 	while (str && str[i])
 	{
